@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,6 +13,7 @@ public class PlayerMotor : MonoBehaviour
     public float jumpForce = 5;
     public float maxSpeed = 10;
     public float stoppingForce= 5;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
