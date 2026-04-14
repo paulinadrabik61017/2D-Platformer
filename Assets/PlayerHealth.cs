@@ -11,6 +11,10 @@ public class PlayerHealth : MonoBehaviour
 
     public delegate void HealthChangedHandler(float newHealth, float amountChanged);
     public event HealthChangedHandler OnHealChanged;
+
+    public delegate void HealthInitHandler(float newHealth);
+    public event HealthInitHandler OnHealthInitialised;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
