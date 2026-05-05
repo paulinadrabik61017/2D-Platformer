@@ -13,6 +13,9 @@ public class PlayerMotor : MonoBehaviour
     public float jumpForce = 5;
     public float maxSpeed = 10;
     public float stoppingForce= 5;
+
+    private int _jumpCount = 0;
+    public int maxJumpCount = 2;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -65,7 +68,11 @@ public class PlayerMotor : MonoBehaviour
         if ( canJump)
         {
             rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            canJump = false;
+            _jumpCount++;
+            if(_jumpCount >= maxJumpCount)
+            {
+                canJump = false;
+            }
         }
     }
 
