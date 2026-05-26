@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -21,18 +22,40 @@ public class PlayerMotor : MonoBehaviour
     private int _jumpCount = 0;
     public int maxJumpCount = 2;
 
+    private Animator _animator;
+    private float scaleX;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        scaleX = transform.localScale.x;
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
         MovePlayer();
+        if (direction.x !=0)
+        {
+            _animator.SetBool("ismoving", true);
+        }
 
-        HandleMaxSpeed();
+        else 
+        {
+            _animator.SetBool("ismoving", false);
+        }
+        if(direction.x > 0)
+        {
+            transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
+
+        }
+        else if (direction.x < 0)
+        {
+            transform.localScale = new Vector3(-scaleX, transform.localScale.y, transform.localScale.z);
+        }
+            HandleMaxSpeed();
         PlayerStopping();
     }
 
