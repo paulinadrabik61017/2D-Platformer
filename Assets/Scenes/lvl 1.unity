@@ -1746,6 +1746,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1445712252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5168922094397413583, guid: 63cc2904b41cfbb4a9067ec7dd293d6f, type: 3}
+  m_PrefabInstance: {fileID: 2030091268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1714033977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,6 +2311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4417120228963966641, guid: 63cc2904b41cfbb4a9067ec7dd293d6f, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1445712252}
     - target: {fileID: 5713425078969073245, guid: 63cc2904b41cfbb4a9067ec7dd293d6f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
